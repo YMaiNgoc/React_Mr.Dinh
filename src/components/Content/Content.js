@@ -1,5 +1,5 @@
 import React from 'react'
-
+import RightContent from './RightContent.js';
 function Content() {
   return (
     <div id="content">
@@ -52,7 +52,7 @@ function Content() {
       </ul>
     </div>
     {/* this is a content for item  */}
-    <div id="right-content">
+    {/* <div id="right-content">
       <h2>Product : </h2>
       <div id="products">
         <div className="product">
@@ -129,7 +129,9 @@ function Content() {
       </div>
       <div style={{clear: 'both'}} />
     </div>
-    <div style={{clear: 'both'}} />
+    <div style={{clear: 'both'}} /> */}
+     <RightContent></RightContent>
+				    <div style={{clear: 'both'}} />
   </div>
   )
 }
