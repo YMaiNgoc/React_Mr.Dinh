@@ -39,8 +39,6 @@ class AddProduct extends Component {
     };
 
     this.props.onAddProduct(newProduct);
-
-    // Reset form sau khi submit
     this.setState({
       name: '',
       name_category: 'Thời trang nam',
@@ -121,7 +119,6 @@ class AddProduct extends Component {
             />
           </div>
 
-          {/* Old Price */}
           <div className="form-group">
             <label htmlFor="old_price">Old price</label>
             <input

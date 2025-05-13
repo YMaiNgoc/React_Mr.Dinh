@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FoodOrderApp.css'; // nhớ import file CSS này
 
 const FoodOrderApp = () => {
   const [menu] = useState([
@@ -29,10 +30,10 @@ const FoodOrderApp = () => {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
+    <div className="container">
       <h2>Menu</h2>
       {menu.map(item => (
-        <div key={item.id}>
+        <div key={item.id} className="menu-item">
           <label>
             <input
               type="checkbox"
@@ -44,20 +45,18 @@ const FoodOrderApp = () => {
         </div>
       ))}
 
-      <div style={{ marginTop: '20px' }}>
-        <input
-          type="number"
-          placeholder="Nhập số tiền hiện có"
-          value={money}
-          onChange={(e) => setMoney(Number(e.target.value))}
-          style={{ width: '100%', padding: '8px', marginBottom: '10px' }}
-        />
-        <button onClick={handleOrder} style={{ width: '100%', padding: '10px' }}>
-          Đặt hàng
-        </button>
-      </div>
+      <input
+        type="number"
+        placeholder="Nhập số tiền hiện có"
+        value={money}
+        onChange={(e) => setMoney(Number(e.target.value))}
+        className="input-money"
+      />
+      <button onClick={handleOrder} className="order-button">
+        Đặt hàng
+      </button>
 
-      <div style={{ marginTop: '20px' }}>
+      <div className="result">
         <h3>Kết quả:</h3>
         <p><strong>Tổng tiền món đã chọn:</strong> {total.toLocaleString()}đ</p>
         <p><strong>Tiền dư còn lại:</strong> {remaining.toLocaleString()}đ</p>

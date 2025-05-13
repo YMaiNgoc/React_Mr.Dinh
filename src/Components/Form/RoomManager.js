@@ -58,10 +58,8 @@ class App extends Component {
             <div className="container">
                 <h2>Add Room</h2>
                 <form onSubmit={this.saveLocalStorage}>
-                    {/* input fields here */}
+                  
                 </form>
-
-                {/* Navigation bar */}
                 <ul className="nav">
                     <li className="nav-item">
                         <a className="nav-link active" href="#">TRANG CHỦ</a>
@@ -69,7 +67,7 @@ class App extends Component {
                     <li className="nav-item">
                         <a className="nav-link" href="#">PHÒNG VÀ MỨC GIÁ</a>
                     </li>
-                    {/* ... */}
+           
                 </ul>
 
                 {/* Table */}

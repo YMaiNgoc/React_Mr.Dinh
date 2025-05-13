@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import Counter_function from './Components/Counter_function';
-import Dientich_hcn from './Components/Dientich_hcn';
-import Dientich_hcn_class from './Components/Dientich_hcn_class';
-import Infor_student from './Components/Form/Infor_student';
-import Core from './Components/Form/Core';
-import RoomManager from './Components/Form/RoomManager';
-import Thoitrang from './Components/Form/Thoitrang';
-import FoodOrderApp from './Components/Form/FoodOrderApp';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import routes from './Components/routes';
 
 function App() {
+  const showContentMenu = (routes) => {
+    if (routes.length === 0) return null;
+
+    return routes.map((route, index) => (
+      <Route 
+        key={index} 
+        path={route.path} 
+        element={route.element} 
+      />
+    ));
+  };
+
   return (
-    <div className="App">
-      {/* <Counter_function/> */}
-      {/* <Dientich_hcn/> */}
-      {/* <Dientich_hcn_class/> */}
-      {/* <Infor_student/> */}
-      {/* <Core/> */}
-      {/* <RoomManager/> */}
-    {/* <Thoitrang/> */}
-    <FoodOrderApp/>
-    </div>
+    <BrowserRouter>
+      <div style={{ margin: '20px' }}>
+        <h2>Welcome to React Router Tutorial</h2>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav">
+            <li>
+              <NavLink 
+                to="/" 
+                className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} 
+                end
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
+                to="/contact" 
+                className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink 
+                to="/about" 
+                className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              >
+                About
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <hr />
+        <Routes>
+          {showContentMenu(routes)}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
